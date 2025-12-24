@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MEGA AI | Wellness Powered by Intelligence</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --bg-color: #020617;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg-color);
+        color: #f8fafc;
+        margin: 0;
+        overflow-x: hidden;
+      }
+      canvas {
+        touch-action: none;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.02);
+        backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 24px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .glass-card:hover {
+        background: rgba(255, 255, 255, 0.04);
+        border-color: rgba(255, 255, 255, 0.15);
+      }
+      .text-glow-cyan { text-shadow: 0 0 30px rgba(6, 182, 212, 0.4); }
+      .text-glow-gold { text-shadow: 0 0 30px rgba(234, 179, 8, 0.4); }
+      .text-glow-violet { text-shadow: 0 0 30px rgba(139, 92, 246, 0.4); }
+
+      /* Grainy texture overlay */
+      .grain {
+        position: fixed;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: url('https://grainy-gradients.vercel.app/noise.svg');
+        opacity: 0.04;
+        pointer-events: none;
+        z-index: 999;
+        animation: noise 0.2s infinite;
+      }
+
+      @keyframes noise {
+        0% { transform: translate(0,0); }
+        10% { transform: translate(-5%,-5%); }
+        20% { transform: translate(-10%,5%); }
+        30% { transform: translate(5%,-10%); }
+        40% { transform: translate(-5%,15%); }
+        50% { transform: translate(-10%,5%); }
+        60% { transform: translate(15%,0); }
+        70% { transform: translate(0,10%); }
+        80% { transform: translate(-15%,0); }
+        90% { transform: translate(10%,5%); }
+        100% { transform: translate(5%,0); }
+      }
+
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #020617;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #1e293b;
+        border-radius: 10px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #334155;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "framer-motion": "https://esm.sh/framer-motion@^12.23.26",
+    "three": "https://esm.sh/three@^0.182.0",
+    "@react-three/fiber": "https://esm.sh/@react-three/fiber@^9.4.2",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "@react-three/drei": "https://esm.sh/@react-three/drei@^10.7.7"
+  }
+}
+</script>
+</head>
+  <body>
+    <div class="grain"></div>
+    <div id="root"></div>
+  </body>
+</html>
